@@ -10,7 +10,6 @@ def staircase(n):
                 j[x] -= 1
         temp.append([1 for one in xrange(i)])
         result = temp
-    # feed items in result into a dict to remove duplicates
     return result
 
 if __name__ == "__main__":
