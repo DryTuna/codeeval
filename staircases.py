@@ -5,14 +5,13 @@ def staircase(n):
         for j in result:
             for x in xrange(0,len(j)):
                 j[x] += 1
-                if j not in temp:
+                if j not in temp and j[x] < 4:
                     temp.append(j[:])
                 j[x] -= 1
         temp.append([1 for one in xrange(i)])
         result = temp
-    # feed items in result into a dict to remove duplicates
     return result
 
 if __name__ == "__main__":
-    for i in xrange(2, 6):
-        print str(staircase(i))
+    for i in staircase(15):
+        print i
