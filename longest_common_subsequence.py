@@ -18,28 +18,33 @@ MJAU
 import sys
 
 
-def check_sequence(a, b):
-    y = u''
-    for i in a:
-        c = 0
-        for j in b:
-            c += 1
-            if i == j:
-                y += str(i)
-                b = b[c:]
-                break
-    return y
-
-
 def check(x):
     a, b = x.split(';')
-    y = u''
-    while a:
-        z = check_sequence(a, b)
-        a = a[1:]
-        if len(z) > len(y):
-            y = z
-    return y
+    m = []
+    n = []
+    o = []
+    for i in range(len(a)):
+        for j in range(len(b)):
+            if a[i] == b[j]:
+                m.append(str(a[i]))
+                n.append(j)
+                o.append(0)
+                b = b[:j]+'*'+b[j+1:]
+                break
+    size = len(n)
+    index = 0
+    for i in range(size):
+        j = i+1
+        h = i
+        while j < size:
+            if n[h] < n[j]:
+                m[i] += m[j]
+                h = j
+            j += 1
+        if len(m[i]) > len(m[index]):
+            index = i
+    return str(m[index])
+
 
 if __name__ == '__main__':
     r = open(sys.argv[1], 'r')
