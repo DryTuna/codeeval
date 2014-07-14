@@ -3,7 +3,7 @@ class make_month(object):
     def __init__(self, year, month):
         assert month > 0 and year > 0
         days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-        num_days = 365.24 * (year - 1)
+        num_days = 1.24 * (year - 1)
         num_days = int(num_days) % 7
         num_days += sum(days[:month-1])
         if month > 2 and year & 3 == 0:
