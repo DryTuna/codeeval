@@ -1,13 +1,13 @@
 class make_month(object):
 
     def __init__(self, year, month):
-        assert month > 0 and year > 1999
+        assert month > 0 and year > 0
         days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-        diff = year - 2000
-        num_days = diff % 7
-        if year > 2000:
-            num_days += (diff >> 2) + 1
+        num_days = 365.24 * (year - 1)
+        num_days = int(num_days) % 7
         num_days += sum(days[:month-1])
+        if month > 2 and year & 3 == 0:
+            num_days += 1
         self.week = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
         self.days = num_days % 7
         self.month = month
