@@ -15,11 +15,6 @@ def build_tower(people):
     print str(r_dict)
     return result
 
-def min_index(item, dict1, dict2):
-    if dict1[item] < dict2[item]:
-        return dict1[item]
-    else:
-        return dict2[item]
 
 def sort_list(people, index):
     x = {}
