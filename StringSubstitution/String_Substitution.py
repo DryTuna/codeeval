@@ -9,6 +9,7 @@ def String_Substitution(x):
         i += 2
     for (fi, ri) in fr:
         tmp = []
+        # print fi, ri,
         for (sub, touch) in s:
             if touch:
                 head = 0
@@ -24,19 +25,22 @@ def String_Substitution(x):
                             i += len(fi)
                             head = i
                     i += 1
-                tmp.append((sub[head:], True))
+                if len(sub[head:]) > 0:
+                    tmp.append((sub[head:], True))
             else:
                 tmp.append((sub, touch))
+        # print tmp
         s = tmp[:]
-    return "".join([str(k) for (k, j) in s])
+    print ''.join(str(k) for (k, j) in s)
 
 
 if __name__ == "__main__":
     import sys
     test_cases = open(sys.argv[1], 'r')
     for test in test_cases:
-        s = String_Substitution(test)
-        if s is not None:
-            print s
+        test = test.split()
+        if len(test) > 0:
+            String_Substitution(test[0])
+        # print s
 
     test_cases.close()
