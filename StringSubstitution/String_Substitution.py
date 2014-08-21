@@ -9,7 +9,7 @@ def String_Substitution(x):
         i += 2
     for (fi, ri) in fr:
         tmp = []
-        # print fi, ri,
+        # print fi, ri
         for (sub, touch) in s:
             if touch:
                 head = 0
@@ -22,8 +22,8 @@ def String_Substitution(x):
                             if head != tail:
                                 tmp.append((sub[head:tail], True))
                             tmp.append((ri, False))
-                            i += len(fi)
-                            head = i
+                            i += len(fi) - 1
+                            head = i + 1
                     i += 1
                 if len(sub[head:]) > 0:
                     tmp.append((sub[head:], True))
