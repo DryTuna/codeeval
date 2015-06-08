@@ -31,7 +31,7 @@ def String_Substitution(x):
                 tmp.append((sub, touch))
         # print tmp
         s = tmp[:]
-    print ''.join(str(k) for (k, j) in s)
+    print(''.join(str(k) for (k, j) in s))
 
 
 if __name__ == "__main__":
