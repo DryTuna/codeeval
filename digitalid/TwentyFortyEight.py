@@ -90,3 +90,4 @@ if __name__ == '__main__':
     for test in test_cases:
         if len(test) > 0:
             TwentyFortyEight(test)
+    test_cases.close()
