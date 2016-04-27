@@ -12,7 +12,7 @@ def f(num, target):
 			temp = ""+my[0]
 			for x in range(0, len(j)):
 				temp+=j[x]+""+my[x+1]
-				print(temp, j)
+				#print(temp, j)
 			if eval(parser.expr(temp).compile()) == target:
 				result.append(str(temp)+"="+str(target))
 		
